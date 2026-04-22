@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/OWNER/Downloads/index_9.html -->
+<!-- saved from url=(0046)file:///C:/Users/OWNER/Downloads/index_10.html -->
 <html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +41,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0d1f16;color:#e8f5ee;-web
 .sn-item.on{color:var(--accent);border-bottom-color:var(--accent);}
 
 /* ── DIGITAL CARD BAND ── */
-.card-band{background:linear-gradient(135deg,#0f2a1a 0%,#1a3a2a 60%,#1e4a32 100%);border-bottom:1px solid rgba(61,186,126,.2);padding:24px 20px 26px;}
+.card-band{background:linear-gradient(135deg,#0f2a1a 0%,#1a3a2a 60%,#1e4a32 100%);border-bottom:1px solid rgba(61,186,126,.2);padding:24px 20px 26px;transition:opacity .3s;}
 .card-band-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
 .dc-photo{width:72px;height:72px;border-radius:50%;overflow:hidden;border:3px solid rgba(255,255,255,.8);flex-shrink:0;box-shadow:0 4px 14px rgba(0,0,0,.15);}
 .dc-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;}
@@ -285,7 +285,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0d1f16;color:#e8f5ee;-web
 
 <!-- STICKY HEADER -->
 <header class="site-header">
-  <a href="file:///C:/Users/OWNER/Downloads/index_9.html#" class="hd-logo">
+  <a href="file:///C:/Users/OWNER/Downloads/index_10.html#" class="hd-logo">
     <div class="hd-gem">FA</div>
     <span class="hd-name">정일석 보험금융플래너</span>
   </a>
@@ -776,6 +776,10 @@ function loadAgentFromURL() {
   // 기본값 (jungilseok) 이면 이미 HTML에 있으므로 API 호출 불필요
   if (agentId === 'jungilseok') return;
 
+  // id 있으면 명함 즉시 숨김 (로딩 완료 후 표시)
+  const cardBand = document.querySelector('.card-band');
+  if (cardBand) cardBand.style.opacity = '0';
+
   // 설계사 정보 API 호출 (JSONP - CORS 우회)
   const cbName = '__agentCB_' + Date.now();
   window[cbName] = function(info) {
@@ -870,6 +874,9 @@ function loadAgentFromURL() {
         const co2 = document.getElementById('dc-company-ci');
         if (co2) co2.textContent = info.지사명;
       }
+
+      // 모든 데이터 로드 완료 후 명함 표시
+      if (cardBand) cardBand.style.opacity = '1';
   };
   const script = document.createElement('script');
   script.id = '__agentScript';
