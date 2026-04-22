@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0046)file:///C:/Users/OWNER/Downloads/index_12.html -->
+<!-- saved from url=(0046)file:///C:/Users/OWNER/Downloads/index_13.html -->
 <html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -287,7 +287,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0d1f16;color:#e8f5ee;-web
 <header class="site-header">
   <a href="file:///C:/Users/OWNER/Downloads/index_10.html#" class="hd-logo">
     <div class="hd-gem">FA</div>
-    <span class="hd-name">정일석 보험금융플래너</span>
+    <span class="hd-name">(주)글로벌금융판매 보험플래너</span>
   </a>
   <div class="hd-right">
     <button class="btn-hd btn-hd-kakao" onclick="openKakao()">💬 카카오</button>
@@ -773,13 +773,6 @@ function loadAgentFromURL() {
   const agentId = params.get('id') || 'jungilseok';
   window.__agentId = agentId;
 
-  // ?id= 파라미터가 있으면 헤더 이름 숨김
-  const params2 = new URLSearchParams(window.location.search);
-  if (params2.has('id')) {
-    const hdName = document.querySelector('.hd-name');
-    if (hdName) hdName.style.display = 'none';
-  }
-
   // 기본값 (jungilseok) 이면 이미 HTML에 있으므로 API 호출 불필요
   if (agentId === 'jungilseok') return;
 
@@ -869,10 +862,6 @@ function loadAgentFromURL() {
           }
         };
       }
-
-      // 헤더 이름
-      const hdName = document.querySelector('.hd-name');
-      if (hdName) hdName.textContent = `${info.이름} ${info.직책 || ''}`;
 
       // 지사명 업데이트
       if (info.지사명) {
