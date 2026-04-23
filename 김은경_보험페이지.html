@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="김은경 팀장 · 글로벌금융판매 모아지사 · 무료 보장분석 · 자동차보험 최저가 비교"/>
+<meta property="og:title" content="김은경 팀장 · 무료 상담"/>
+<meta property="og:description" content="나이대별 맞춤 보장분석 + 자동차보험 전보험사 최저가 비교견적"/>
+<title>김은경 팀장 · 글로벌금융판매 모아지사</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans KR',sans-serif;background:#F5F2EB;color:#1a2340;-webkit-font-smoothing:antialiased;}
+:root{
+  --navy:#1a2340;--navy2:#243060;--gold:#C9A84C;--gold-h:#b8943c;
+  --gold-light:#fdf3e0;--cream:#FAF8F3;--cream2:#F5F2EB;
+  --border:#e8e4da;--muted:#9a96a0;--sub:#6a7080;
+  --kakao:#FEE500;--kbrown:#3C1E1E;--green:#2a8a5e;
+  --r:8px;--rm:12px;--rl:18px;
+}
+
+/* ── STICKY HEADER ── */
+.site-header{background:var(--navy);border-bottom:2px solid var(--gold);position:sticky;top:0;z-index:100;padding:0 20px;height:54px;display:flex;align-items:center;justify-content:space-between;}
+.hd-logo{display:flex;align-items:center;gap:9px;text-decoration:none;}
+.hd-gem{width:28px;height:28px;background:var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--navy);}
+.hd-name{color:#FAF8F3;font-size:13px;font-weight:500;}
+.hd-right{display:flex;gap:7px;}
+.btn-hd{border:none;border-radius:6px;padding:7px 12px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;}
+.btn-hd-kakao{background:var(--kakao);color:var(--kbrown);}
+.btn-hd-gold{background:var(--gold);color:var(--navy);}
+
+/* ── SECTION NAV ── */
+.sec-nav{background:#fff;border-bottom:0.5px solid var(--border);padding:0 16px;display:flex;overflow-x:auto;scrollbar-width:none;gap:0;}
+.sec-nav::-webkit-scrollbar{display:none;}
+.sn-item{padding:11px 16px;font-size:12px;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;font-weight:500;}
+.sn-item:hover{color:var(--navy);}
+.sn-item.on{color:var(--navy);border-bottom-color:var(--gold);}
+
+/* ── DIGITAL CARD BAND ── */
+.card-band{background:var(--navy);border-bottom:1px solid rgba(201,168,76,.25);padding:20px 20px 22px;}
+.card-band-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.dc-photo{width:68px;height:68px;border-radius:50%;overflow:hidden;border:3px solid var(--gold);flex-shrink:0;}
+.dc-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.dc-info{flex:1;min-width:160px;}
+.dc-company{font-size:10px;color:rgba(201,168,76,.7);letter-spacing:.4px;margin-bottom:3px;}
+.dc-name{font-size:20px;font-weight:700;color:#FAF8F3;margin-bottom:2px;}
+.dc-role{font-size:11px;color:rgba(250,248,243,.45);margin-bottom:8px;}
+.dc-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.dc-tag{font-size:10px;background:rgba(201,168,76,.13);color:var(--gold);border:1px solid rgba(201,168,76,.25);border-radius:10px;padding:2px 9px;}
+.dc-contacts{display:flex;flex-direction:column;gap:5px;padding-left:14px;border-left:1px solid rgba(201,168,76,.2);}
+.dc-ci{display:flex;align-items:center;gap:7px;font-size:11px;color:rgba(250,248,243,.65);}
+.dc-ci-ic{width:20px;height:20px;background:rgba(201,168,76,.13);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;}
+.dc-btns{display:flex;flex-direction:column;gap:6px;flex-shrink:0;}
+.dc-btn-k{background:var(--kakao);color:var(--kbrown);border:none;border-radius:6px;padding:9px 16px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;}
+.dc-btn-o{background:transparent;color:var(--gold);border:1px solid rgba(201,168,76,.35);border-radius:6px;padding:8px 16px;font-size:11px;cursor:pointer;font-family:inherit;white-space:nowrap;}
+.dc-tagline{font-size:11px;color:rgba(250,248,243,.4);margin-top:7px;font-style:italic;width:100%;}
+
+/* ── HERO ── */
+.hero{background:var(--navy);padding:46px 20px 40px;text-align:center;position:relative;}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);}
+.hero-inner{max-width:580px;margin:0 auto;}
+.hero-eyebrow{display:inline-block;font-size:11px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:13px;background:rgba(201,168,76,.12);padding:4px 13px;border-radius:20px;border:1px solid rgba(201,168,76,.28);}
+.hero-title{font-size:clamp(22px,5.5vw,36px);font-weight:700;color:#FAF8F3;line-height:1.32;margin-bottom:11px;}
+.hero-title span{color:var(--gold);}
+.hero-sub{font-size:13px;color:rgba(250,248,243,.5);margin-bottom:26px;line-height:1.7;}
+.hero-btns{display:flex;flex-direction:column;align-items:center;gap:9px;}
+.hero-main-btns{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;width:100%;}
+@media(max-width:640px){.hero-main-btns{flex-direction:column;align-items:center;}}
+@keyframes pulse-btn{
+  0%{box-shadow:0 0 0 0 rgba(254,229,0,.7);transform:scale(1);}
+  50%{box-shadow:0 0 0 12px rgba(254,229,0,0);transform:scale(1.04);}
+  100%{box-shadow:0 0 0 0 rgba(254,229,0,0);transform:scale(1);}
+}
+.btn-hero-p{background:var(--kakao);color:var(--kbrown);border:none;border-radius:var(--r);padding:14px 28px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;width:100%;max-width:300px;transition:background .2s,transform .15s;animation:pulse-btn 1.8s ease-in-out infinite;}
+.btn-hero-p:hover{background:#f0d800;transform:scale(1.06);animation:none;box-shadow:0 4px 18px rgba(254,229,0,.5);}
+.btn-hero-k{background:var(--kakao);color:var(--kbrown);border:none;border-radius:var(--r);padding:13px 28px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;width:100%;max-width:300px;display:flex;align-items:center;justify-content:center;gap:7px;transition:background .2s,transform .15s;}
+.btn-hero-k:hover{background:#f0d800;transform:translateY(-1px);}
+.hero-or{font-size:11px;color:rgba(250,248,243,.28);}
+
+/* ── TRUST ── */
+.trust-band{background:#fff;border-bottom:0.5px solid var(--border);padding:14px 20px;}
+.trust-inner{max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
+.trust-badge{background:var(--cream2);border:1px solid var(--border);border-radius:16px;padding:5px 12px;font-size:11px;color:var(--sub);}
+
+/* ── COMMON SECTION ── */
+.section{padding:44px 20px;}
+.sec-inner{max-width:760px;margin:0 auto;}
+.sec-eyebrow{font-size:10px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;text-align:center;margin-bottom:6px;}
+.sec-title{font-size:clamp(18px,4vw,24px);font-weight:700;color:var(--navy);text-align:center;line-height:1.35;margin-bottom:8px;}
+.sec-sub{font-size:13px;color:var(--muted);text-align:center;margin-bottom:28px;line-height:1.7;}
+
+/* ── AGE SELECTOR ── */
+.age-bg{background:var(--cream2);}
+.age-scroll-wrap{overflow-x:auto;padding-bottom:6px;scrollbar-width:none;}
+.age-scroll-wrap::-webkit-scrollbar{display:none;}
+.age-scroll{display:flex;gap:9px;width:max-content;padding:3px 2px;}
+.age-btn{flex-shrink:0;width:98px;height:84px;border:1.5px solid var(--border);border-radius:var(--rm);background:#fff;cursor:pointer;font-family:inherit;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;transition:all .2s;}
+.age-btn:hover{border-color:var(--gold);background:var(--gold-light);}
+.age-btn.on{border-color:var(--navy);background:var(--navy);}
+.ab-icon{font-size:24px;}
+.ab-label{font-size:12px;font-weight:700;color:var(--navy);}
+.age-btn.on .ab-label{color:#FAF8F3;}
+.ab-sub{font-size:9px;color:var(--muted);}
+.age-btn.on .ab-sub{color:rgba(250,248,243,.5);}
+.age-prompt{text-align:center;margin-top:14px;font-size:12px;color:var(--muted);}
+.age-prompt span{color:var(--gold);font-weight:700;}
+
+/* ── AGE CONTENT ── */
+.dynamic-section{background:#fff;padding:36px 20px;min-height:200px;}
+.dynamic-placeholder{text-align:center;padding:36px 20px;color:var(--muted);font-size:13px;}
+.dp-icon{font-size:38px;margin-bottom:10px;opacity:.3;}
+.age-content{display:none;}
+.age-content.show{display:block;animation:fadeUp .35s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.ac-header{background:var(--navy);border-radius:var(--rm) var(--rm) 0 0;padding:18px 22px;display:flex;align-items:center;gap:13px;}
+.ac-num{width:40px;height:40px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--navy);flex-shrink:0;}
+.ac-hage{font-size:11px;color:var(--gold);margin-bottom:3px;}
+.ac-htitle{font-size:15px;font-weight:700;color:#FAF8F3;line-height:1.3;}
+.ac-body{background:var(--cream2);border:0.5px solid var(--border);border-top:none;border-radius:0 0 var(--rm) var(--rm);padding:20px;}
+.ac-hook{background:#fff;border:0.5px solid var(--border);border-left:3px solid var(--gold);border-radius:0 var(--r) var(--r) 0;padding:13px 15px;margin-bottom:16px;font-size:12px;color:var(--sub);line-height:1.7;}
+.ac-sub-title{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:9px;}
+.ac-risks{display:flex;flex-direction:column;gap:7px;margin-bottom:18px;}
+.ac-risk{display:flex;align-items:flex-start;gap:9px;background:#fff;border:0.5px solid var(--border);border-radius:var(--r);padding:11px 13px;}
+.ac-risk-ic{width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+.ri-r{background:#fde8e8;}.ri-a{background:var(--gold-light);}.ri-b{background:#e8edf8;}.ri-g{background:#e3f5ec;}.ri-p{background:#eeedfb;}
+.ac-risk-t{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:2px;}
+.ac-risk-d{font-size:11px;color:var(--sub);line-height:1.5;}
+.ac-recs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:18px;}
+@media(max-width:400px){.ac-recs{grid-template-columns:1fr;}}
+.ac-rec{background:#fff;border:0.5px solid var(--border);border-radius:var(--r);padding:11px 13px;}
+.ac-rec-top{display:flex;align-items:center;gap:6px;margin-bottom:4px;}
+.ac-rec-dot{width:7px;height:7px;border-radius:50%;background:var(--navy);flex-shrink:0;}
+.ac-rec-name{font-size:12px;font-weight:700;color:var(--navy);}
+.ac-rec-p{font-size:10px;padding:2px 7px;border-radius:7px;margin-left:auto;}
+.rp-h{background:#fde8e8;color:#b02a2a;}.rp-m{background:var(--gold-light);color:#8a6a20;}.rp-l{background:#e8edf8;color:#2a4db0;}
+.ac-rec-d{font-size:11px;color:var(--sub);line-height:1.5;}
+.ac-cta{background:var(--navy);border-radius:var(--r);padding:16px;text-align:center;margin-top:4px;}
+.ac-cta-txt{font-size:12px;color:rgba(250,248,243,.65);margin-bottom:11px;line-height:1.6;}
+.ac-cta-btns{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;}
+.btn-ac-f{background:var(--gold);color:var(--navy);border:none;border-radius:6px;padding:10px 20px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;}
+.btn-ac-k{background:var(--kakao);color:var(--kbrown);border:none;border-radius:6px;padding:10px 18px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:5px;}
+
+/* ── CAR INSURANCE ── */
+.car-bg{background:var(--cream2);}
+.car-hero{background:linear-gradient(135deg,#0f1520 0%,#1a2340 60%,#1e2d50 100%);border-radius:var(--rl);padding:28px 24px;margin-bottom:20px;position:relative;overflow:hidden;text-align:center;}
+.car-hero::before{content:'🚗';position:absolute;right:-10px;bottom:-10px;font-size:90px;opacity:.08;}
+.car-hero-badge{display:inline-block;background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.35);border-radius:20px;padding:4px 13px;font-size:10px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
+.car-hero-title{font-size:clamp(18px,4.5vw,24px);font-weight:700;color:#FAF8F3;line-height:1.35;margin-bottom:8px;}
+.car-hero-title span{color:var(--gold);}
+.car-hero-sub{font-size:12px;color:rgba(250,248,243,.5);line-height:1.7;margin-bottom:18px;}
+.car-insurer-row{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:18px;}
+.car-ins-badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:4px 11px;font-size:11px;color:rgba(250,248,243,.7);}
+.btn-car-compare{background:var(--gold);color:var(--navy);border:none;border-radius:var(--r);padding:14px 28px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .15s;}
+.btn-car-compare:hover{background:var(--gold-h);transform:translateY(-1px);}
+
+/* car form */
+.car-form-card{background:#fff;border:0.5px solid var(--border);border-radius:var(--rm);overflow:hidden;margin-bottom:16px;}
+.car-form-header{background:var(--navy);padding:14px 20px;display:flex;align-items:center;gap:9px;}
+.cfh-dot{width:7px;height:7px;background:var(--gold);border-radius:50%;}
+.cfh-title{color:#FAF8F3;font-size:13px;font-weight:500;}
+.cfh-badge{margin-left:auto;background:rgba(201,168,76,.2);color:var(--gold);font-size:10px;padding:2px 8px;border-radius:8px;}
+.car-form-body{padding:20px;}
+.cfg{margin-bottom:12px;}
+.cfl{font-size:11px;color:var(--muted);display:block;margin-bottom:4px;}
+.cfl .req{color:var(--gold);}
+.cfi{width:100%;border:1px solid var(--border);border-radius:var(--r);padding:10px 12px;font-size:13px;color:var(--navy);font-family:inherit;outline:none;transition:border .2s;}
+.cfi:focus{border-color:var(--gold);}
+.cfsel{width:100%;border:1px solid var(--border);border-radius:var(--r);padding:10px 12px;font-size:13px;color:var(--navy);font-family:inherit;outline:none;background:#fff;}
+.cf2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.car-agree{background:var(--cream2);border:1px solid var(--border);border-radius:var(--r);padding:10px 12px;margin-bottom:12px;}
+.car-agree-lbl{font-size:11px;color:var(--muted);line-height:1.6;display:flex;gap:7px;cursor:pointer;}
+.car-agree-lbl input{margin-top:2px;flex-shrink:0;accent-color:var(--navy);}
+.btn-car-submit{width:100%;background:var(--navy);color:#FAF8F3;border:none;border-radius:var(--r);padding:14px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s;margin-bottom:9px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.btn-car-submit:hover{background:var(--navy2);}
+.car-kakao-row{display:flex;align-items:center;justify-content:center;gap:9px;font-size:12px;color:var(--muted);}
+.btn-car-kakao{background:var(--kakao);color:var(--kbrown);border:none;border-radius:6px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;}
+
+/* benefits */
+.car-benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:16px;}
+.car-ben{background:#fff;border:0.5px solid var(--border);border-radius:var(--rm);padding:16px;text-align:center;}
+.car-ben-icon{font-size:26px;margin-bottom:8px;}
+.car-ben-title{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.car-ben-desc{font-size:11px;color:var(--sub);line-height:1.5;}
+
+/* savings */
+.car-savings{background:var(--navy);border-radius:var(--rm);padding:20px;text-align:center;margin-bottom:16px;}
+.cs-title{font-size:13px;color:rgba(250,248,243,.6);margin-bottom:10px;}
+.cs-amount{font-size:32px;font-weight:700;color:var(--gold);margin-bottom:4px;}
+.cs-sub{font-size:11px;color:rgba(250,248,243,.4);}
+
+/* ── PROCESS ── */
+.process-bg{background:var(--cream2);}
+.process-steps{display:flex;flex-direction:column;gap:0;}
+.ps{display:flex;gap:13px;align-items:flex-start;padding:13px 0;position:relative;}
+.ps:not(:last-child)::after{content:'';position:absolute;left:18px;top:48px;bottom:-13px;width:2px;background:var(--border);}
+.ps-ic{width:38px;height:38px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;position:relative;z-index:1;}
+.ps-t{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:3px;}
+.ps-d{font-size:12px;color:var(--sub);line-height:1.5;}
+.ps-time{display:inline-block;font-size:10px;background:var(--gold-light);color:#8a6a20;padding:2px 7px;border-radius:8px;margin-top:3px;}
+
+/* ── KAKAO ── */
+.kakao-bg{background:#FFFDE7;border-top:2px solid var(--kakao);border-bottom:2px solid var(--kakao);}
+.kakao-card{background:#fff;border:1px solid var(--kakao);border-radius:var(--rm);padding:26px 20px;max-width:480px;margin:0 auto;text-align:center;}
+.kc-icon{width:52px;height:52px;background:var(--kakao);border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:24px;}
+.kc-title{font-size:17px;font-weight:700;color:var(--kbrown);margin-bottom:6px;}
+.kc-sub{font-size:13px;color:#7a6000;margin-bottom:20px;line-height:1.6;}
+.btn-kc{background:var(--kakao);color:var(--kbrown);border:none;border-radius:var(--r);padding:14px 28px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;width:100%;max-width:300px;display:flex;align-items:center;justify-content:center;gap:7px;margin:0 auto 11px;transition:background .2s,transform .15s;}
+.btn-kc:hover{background:#f0d800;transform:translateY(-1px);}
+.kc-id{display:inline-block;background:#fff;border:1.5px solid var(--kakao);border-radius:16px;padding:5px 14px;font-size:12px;font-weight:700;color:var(--kbrown);margin-bottom:16px;}
+.kc-feats{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+.kc-feat{display:flex;align-items:center;gap:5px;font-size:12px;color:#7a6000;}
+.kc-ck{width:17px;height:17px;background:var(--kakao);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--kbrown);font-weight:700;}
+
+/* ── PROFILE ── */
+.profile-bg{background:#fff;}
+.profile-card{background:var(--cream2);border:0.5px solid var(--border);border-radius:var(--rl);padding:22px;max-width:760px;margin:0 auto;display:flex;gap:16px;flex-wrap:wrap;}
+.pr-photo{width:70px;height:70px;border-radius:50%;overflow:hidden;border:3px solid var(--gold);flex-shrink:0;}
+.pr-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.pr-name{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:2px;}
+.pr-role{font-size:11px;color:var(--muted);margin-bottom:10px;}
+.pr-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
+.pr-tag{background:#fff;border:1px solid var(--border);border-radius:14px;padding:3px 10px;font-size:11px;color:var(--sub);}
+.pr-tag.g{background:var(--gold-light);border-color:#e8c870;color:#8a6a20;}
+.pr-quote{font-size:12px;color:var(--sub);line-height:1.7;border-left:3px solid var(--gold);padding-left:10px;font-style:italic;}
+
+/* ── FORM ── */
+.form-bg{background:var(--cream2);}
+.form-card{background:#fff;border:0.5px solid var(--border);border-radius:var(--rm);overflow:hidden;max-width:480px;margin:0 auto;}
+.fc-hd{background:var(--navy);padding:15px 20px;display:flex;align-items:center;gap:8px;}
+.fc-dot{width:7px;height:7px;background:var(--gold);border-radius:50%;}
+.fc-title{color:#FAF8F3;font-size:13px;font-weight:500;}
+.fc-body{padding:20px;}
+.fg{margin-bottom:12px;}
+.fl{font-size:11px;color:var(--muted);display:block;margin-bottom:4px;}
+.fl .req{color:var(--gold);}
+.fi{width:100%;border:1px solid var(--border);border-radius:var(--r);padding:10px 12px;font-size:13px;color:var(--navy);font-family:inherit;outline:none;transition:border .2s;}
+.fi:focus{border-color:var(--gold);}
+.fsel{width:100%;border:1px solid var(--border);border-radius:var(--r);padding:10px 12px;font-size:13px;color:var(--navy);font-family:inherit;outline:none;background:#fff;}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.fchk-g{display:flex;flex-direction:column;gap:6px;}
+.fchk{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--sub);cursor:pointer;}
+.fchk input{width:15px;height:15px;accent-color:var(--navy);}
+.agree-box{background:var(--cream2);border:1px solid var(--border);border-radius:var(--r);padding:10px;margin-bottom:12px;}
+.agree-lbl{font-size:11px;color:var(--muted);line-height:1.6;display:flex;gap:7px;cursor:pointer;}
+.agree-lbl input{margin-top:2px;flex-shrink:0;accent-color:var(--navy);}
+.btn-submit{width:100%;background:var(--navy);color:#FAF8F3;border:none;border-radius:var(--r);padding:14px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;margin-bottom:8px;}
+.btn-submit:hover{background:var(--navy2);}
+.form-krow{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;color:var(--muted);}
+.btn-fk{background:var(--kakao);color:var(--kbrown);border:none;border-radius:6px;padding:8px 13px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;}
+
+/* ── FOOTER ── */
+.site-footer{background:#0f1520;padding:28px 20px 90px;text-align:center;}
+.ft-logo{font-size:12px;color:rgba(250,248,243,.3);margin-bottom:5px;}
+.ft-disc{font-size:11px;color:rgba(250,248,243,.18);line-height:1.7;}
+
+/* ── FLOAT BAR ── */
+.float-bar{position:fixed;bottom:0;left:0;right:0;background:var(--navy);border-top:2px solid var(--gold);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;z-index:90;transition:transform .3s;}
+.float-bar.hidden{transform:translateY(100%);}
+.fb-text{font-size:11px;color:rgba(250,248,243,.55);line-height:1.3;}
+.fb-text strong{color:#FAF8F3;display:block;font-size:12px;}
+.fb-btns{display:flex;gap:6px;flex-shrink:0;}
+.btn-fb-k{background:var(--kakao);color:var(--kbrown);border:none;border-radius:6px;padding:8px 12px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;}
+.btn-fb-f{background:var(--gold);color:var(--navy);border:none;border-radius:6px;padding:8px 12px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;}
+.btn-fb-c{background:#e8edf8;color:var(--navy2);border:none;border-radius:6px;padding:8px 11px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;}
+
+/* ── MODAL ── */
+.modal-ov{display:none;position:fixed;inset:0;background:rgba(26,35,64,.6);z-index:200;align-items:center;justify-content:center;padding:20px;}
+.modal-ov.show{display:flex;}
+.modal-box{background:#fff;border-radius:var(--rl);padding:32px 24px;max-width:340px;width:100%;text-align:center;}
+.modal-icon{font-size:38px;margin-bottom:11px;}
+.modal-title{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:7px;}
+.modal-sub{font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.7;}
+.modal-btns{display:flex;flex-direction:column;gap:8px;}
+.btn-modal-k{background:var(--kakao);color:var(--kbrown);border:none;border-radius:8px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:6px;}
+.btn-modal-cl{background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:8px;padding:11px;font-size:13px;cursor:pointer;font-family:inherit;}
+
+/* ── FADE ANIM ── */
+.fi-a{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s;}
+.fi-a.vis{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<header class="site-header">
+  <a href="#" class="hd-logo">
+    <div class="hd-gem">🛡️</div>
+    <span class="hd-name">당신의 든든한 보험 파트너</span>
+  </a>
+  <div class="hd-right">
+    <button class="btn-hd btn-hd-kakao" onclick="openKakao()">💬 카카오</button>
+    <button class="btn-hd btn-hd-gold" onclick="scrollToSection('formSection')">상담신청</button>
+  </div>
+</header>
+
+<!-- SECTION NAV -->
+<nav class="sec-nav">
+  <div class="sn-item on" onclick="scrollToSection('cardBand')">디지털 명함</div>
+  <div class="sn-item" onclick="scrollToSection('carSection')">🚗 자동차보험 비교</div>
+  <div class="sn-item" onclick="scrollToSection('ageSection')">나이별 보장분석</div>
+  <div class="sn-item" onclick="scrollToSection('formSection')">무료 상담신청</div>
+</nav>
+
+<!-- DIGITAL CARD BAND -->
+<div class="card-band" id="cardBand">
+  <div class="card-band-inner">
+    <div class="dc-photo">
+      <img src="data:image/jpeg;base64,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" alt="김은경 설계사"/>
+    </div>
+    <div class="dc-info">
+      <div class="dc-company">(주)글로벌금융판매 모아지사</div>
+      <div class="dc-name">김은경</div>
+      <div class="dc-role">팀장</div>
+      <div class="dc-tags"><div class="dc-tag">생명보험</div><div class="dc-tag">손해보험</div><div class="dc-tag">자동차보험</div><div class="dc-tag">실손·건강·종신</div><div class="dc-tag">재무설계</div><div class="dc-tag">암·건강보험</div></div>
+      <div class="dc-tagline">"신뢰를 바탕으로, 든든한 미래를 함께 설계합니다."</div>
+    </div>
+    <div class="dc-contacts">
+      <div class="dc-ci"><div class="dc-ci-ic">📞</div><span>010-3602-9378</span></div>
+      <div class="dc-ci"><div class="dc-ci-ic">✉</div><span>kukime7@hanmail.net</span></div>
+      <div class="dc-ci"><div class="dc-ci-ic">🏢</div><span>글로벌금융판매 모아지사</span></div>
+    </div>
+    <div class="dc-btns">
+      <button class="dc-btn-k" onclick="openKakao()">💬 카카오 상담</button>
+      <button class="dc-btn-o" onclick="window.location.href='tel:01036029378'">📞 전화 연결</button>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">나이대별 맞춤 보장분석 · 무료</div>
+    <h1 class="hero-title">내 나이에 <span>꼭 필요한 보험</span>,<br>제대로 알고 계신가요?</h1>
+    <p class="hero-sub">나이대를 선택하면 지금 당장 필요한 보장을 알려드립니다<br>경력 10년+ · 생명·손해·자동차보험 전문</p>
+    <div class="hero-btns">
+      <div class="hero-main-btns">
+        <button class="btn-hero-p" onclick="scrollToSection('carSection')">자동차 비교견적 확인하기 ↓</button>
+        <button class="btn-hero-p" onclick="scrollToSection('ageSection')">내 나이대 보장 확인하기 ↓</button>
+      </div>
+      <div class="hero-or">또는</div>
+      <button class="btn-hero-k" onclick="openKakao()"><span style="font-size:15px;">💬</span> 카카오톡으로 바로 상담</button>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust-band">
+  <div class="trust-inner">
+    <div class="trust-badge">🏆 경력 10년+</div>
+    <div class="trust-badge">🚗 자동차보험 전문</div>
+    <div class="trust-badge">🛡 생명·손해보험</div>
+    <div class="trust-badge">💼 재무설계·법인절세</div>
+    <div class="trust-badge">⭐ 고객 만족도 ★★★★★</div>
+    <div class="trust-badge">👥 상담 고객 1,000명+</div>
+  </div>
+</div>
+
+<!-- CAR INSURANCE -->
+<section class="section car-bg fi-a" id="carSection">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">자동차보험 비교견적</div>
+    <h2 class="sec-title">🚗 전보험사 최저가 비교견적</h2>
+    <p class="sec-sub">삼성·현대·DB·KB·메리츠·하나·흥국·AXA 등 전보험사 한번에 비교<br>같은 보장, 더 저렴하게 가입하세요</p>
+
+    <div class="car-hero">
+      <div class="car-hero-badge">전보험사 실시간 비교</div>
+      <div class="car-hero-title">같은 차, 같은 보장<br><span>보험료는 최대 30% 차이</span>납니다</div>
+      <div class="car-hero-sub">보험사마다 보험료가 다릅니다. 지금 비교하고 가장 저렴한 곳에 가입하세요.</div>
+      <div class="car-insurer-row">
+        <div class="car-ins-badge">삼성화재</div>
+        <div class="car-ins-badge">현대해상</div>
+        <div class="car-ins-badge">DB손해보험</div>
+        <div class="car-ins-badge">KB손해보험</div>
+        <div class="car-ins-badge">메리츠화재</div>
+        <div class="car-ins-badge">하나손해보험</div>
+        <div class="car-ins-badge">흥국화재</div>
+        <div class="car-ins-badge">AXA손해보험</div>
+        <div class="car-ins-badge">캐롯손해보험</div>
+        <div class="car-ins-badge">한화손해보험</div>
+      </div>
+    </div>
+
+    <div class="car-savings">
+      <div class="cs-title">비교견적 평균 절감액</div>
+      <div class="cs-amount">연 평균 87,000원</div>
+      <div class="cs-sub">동일 보장 기준 · 비교견적 고객 평균</div>
+    </div>
+
+    <div class="car-benefits">
+      <div class="car-ben"><div class="car-ben-icon">⚡</div><div class="car-ben-title">3분 완성</div><div class="car-ben-desc">차량번호만 입력하면 자동으로 정보 불러오기</div></div>
+      <div class="car-ben"><div class="car-ben-icon">🔒</div><div class="car-ben-title">안심 비교</div><div class="car-ben-desc">개인정보 안전 처리, 비교만 해도 가입 강요 없음</div></div>
+      <div class="car-ben"><div class="car-ben-icon">📊</div><div class="car-ben-title">전사 동시 비교</div><div class="car-ben-desc">10개 이상 보험사 보험료 한눈에 비교</div></div>
+      <div class="car-ben"><div class="car-ben-icon">🎯</div><div class="car-ben-title">맞춤 추천</div><div class="car-ben-desc">운전 패턴·차량 종류에 맞는 최적 플랜 추천</div></div>
+    </div>
+
+    <!-- CAR FORM -->
+    <div class="car-form-card">
+      <div class="car-form-header">
+        <div class="cfh-dot"></div>
+        <div class="cfh-title">자동차보험 비교견적 신청</div>
+        <div class="cfh-badge">무료 · 3분</div>
+      </div>
+      <div class="car-form-body">
+        <div class="cf2">
+          <div class="cfg"><label class="cfl">차량번호 <span class="req">*</span></label><input class="cfi" id="car_num" placeholder="12가 3456"/></div>
+          <div class="cfg"><label class="cfl">성명 <span class="req">*</span></label><input class="cfi" id="car_name" placeholder="홍길동"/></div>
+        </div>
+        <div class="cf2">
+          <div class="cfg"><label class="cfl">생년월일 <span class="req">*</span></label><input class="cfi" id="car_birth" placeholder="19850101" maxlength="8"/></div>
+          <div class="cfg"><label class="cfl">연락처 <span class="req">*</span></label><input class="cfi" id="car_tel" placeholder="010-0000-0000"/></div>
+        </div>
+        <div class="cf2">
+          <div class="cfg"><label class="cfl">차량 종류</label>
+            <select class="cfsel" id="car_type">
+              <option>승용차 (개인)</option><option>승용차 (업무용)</option>
+              <option>SUV</option><option>승합차</option><option>화물차</option><option>이륜차</option>
+            </select>
+          </div>
+          <div class="cfg"><label class="cfl">현재 보험사</label>
+            <select class="cfsel" id="car_curr">
+              <option>삼성화재</option><option>현대해상</option><option>DB손해보험</option>
+              <option>KB손해보험</option><option>메리츠화재</option><option>기타</option><option>신규가입</option>
+            </select>
+          </div>
+        </div>
+        <div class="cfg"><label class="cfl">만기일 (갱신 예정일)</label><input class="cfi" id="car_expire" placeholder="2025-06-30" type="date"/></div>
+        <div class="car-agree">
+          <label class="car-agree-lbl"><input type="checkbox" id="car_agree"/>개인정보 수집 및 보험료 비교 목적의 이용에 동의합니다.</label>
+        </div>
+        <button class="btn-car-submit" onclick="submitCar()">
+          <span style="font-size:16px;">🚗</span> 전보험사 최저가 비교하기
+        </button>
+        <div class="car-kakao-row">
+          <span>또는</span>
+          <button class="btn-car-kakao" onclick="openKakao()">💬 카카오로 비교 신청</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGE SECTION -->
+<section class="section age-bg fi-a" id="ageSection">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">나이대별 맞춤 분석</div>
+    <h2 class="sec-title">내 나이대를 선택해 주세요</h2>
+    <p class="sec-sub">선택 즉시 꼭 필요한 보장과 주의사항을 알려드립니다</p>
+    <div class="age-scroll-wrap">
+      <div class="age-scroll">
+        <button class="age-btn" onclick="selectAge('10',this)"><div class="ab-icon">🎓</div><div class="ab-label">10대</div><div class="ab-sub">~19세</div></button>
+        <button class="age-btn" onclick="selectAge('20',this)"><div class="ab-icon">🏃</div><div class="ab-label">20대</div><div class="ab-sub">20~29세</div></button>
+        <button class="age-btn" onclick="selectAge('30',this)"><div class="ab-icon">👔</div><div class="ab-label">30대</div><div class="ab-sub">30~39세</div></button>
+        <button class="age-btn" onclick="selectAge('40',this)"><div class="ab-icon">🏠</div><div class="ab-label">40대</div><div class="ab-sub">40~49세</div></button>
+        <button class="age-btn" onclick="selectAge('50',this)"><div class="ab-icon">🌿</div><div class="ab-label">50대</div><div class="ab-sub">50~59세</div></button>
+        <button class="age-btn" onclick="selectAge('60',this)"><div class="ab-icon">🏅</div><div class="ab-label">60대+</div><div class="ab-sub">60세~</div></button>
+      </div>
+    </div>
+    <div class="age-prompt" id="agePrompt">👆 나이대를 선택하면 <span>맞춤 분석</span>이 바로 표시됩니다</div>
+  </div>
+</section>
+
+<!-- DYNAMIC CONTENT -->
+<section class="dynamic-section" id="dynamicSection">
+  <div class="sec-inner">
+    <div class="dynamic-placeholder" id="dynPH"><div class="dp-icon">📊</div>위에서 나이대를 선택하면<br>맞춤 보장 분석이 여기에 표시됩니다</div>
+
+    <!-- 10대 -->
+    <div class="age-content" id="content-10">
+      <div class="ac-header"><div class="ac-num">10대</div><div><div class="ac-hage">10대 · ~19세</div><div class="ac-htitle">지금 가입하면 평생 보험료가 달라집니다</div></div></div>
+      <div class="ac-body">
+        <div class="ac-hook">어릴 때 가입할수록 보험료가 저렴하고 건강상 이슈 없이 가입 가능합니다. 부모님과 함께 지금 확인해 두는 것이 평생 절약의 시작입니다.</div>
+        <div class="ac-sub-title">⚠ 꼭 알아야 할 포인트</div>
+        <div class="ac-risks">
+          <div class="ac-risk"><div class="ac-risk-ic ri-a">💰</div><div><div class="ac-risk-t">나이가 어릴수록 보험료 최저</div><div class="ac-risk-d">같은 보장도 10대에 가입하면 30대보다 30~50% 저렴합니다.</div></div></div>
+          <div class="ac-risk"><div class="ac-risk-ic ri-b">🦷</div><div><div class="ac-risk-t">치아·실손 기초 보장 점검</div><div class="ac-risk-d">교정·충치 등 치아 치료가 많은 시기. 실손 미가입 시 의료비 전액 부담.</div></div></div>
+          <div class="ac-risk"><div class="ac-risk-ic ri-r">📚</div><div><div class="ac-risk-t">운동·교외 활동 상해 위험</div><div class="ac-risk-d">활동량이 많아 상해 위험 높음. 상해보험 기본 가입 필요.</div></div></div>
+        </div>
+        <div class="ac-sub-title">✅ 추천 보험</div>
+        <div class="ac-recs">
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">실손의료비보험</div><span class="ac-rec-p rp-h">필수</span></div><div class="ac-rec-d">지금 가입이 평생 최저가. 의료비 전액 보장.</div></div>
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">어린이 종합보험</div><span class="ac-rec-p rp-h">필수</span></div><div class="ac-rec-d">상해·골절·화상 등 어린이 특유 위험 보장.</div></div>
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">치아보험</div><span class="ac-rec-p rp-m">추천</span></div><div class="ac-rec-d">교정·충치 치료비 절감. 대기기간 전 미리 가입.</div></div>
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">CI보험</div><span class="ac-rec-p rp-m">추천</span></div><div class="ac-rec-d">10대 가입 시 납입기간 길어 보험료 부담 최소.</div></div>
+        </div>
+        <div class="ac-cta"><div class="ac-cta-txt">10대 자녀의 보험, 지금 점검해 드립니다</div><div class="ac-cta-btns"><button class="btn-ac-f" onclick="scrollToSection('formSection')">무료 상담 신청</button><button class="btn-ac-k" onclick="openKakao()"><span>💬</span>카카오 상담</button></div></div>
+      </div>
+    </div>
+
+    <!-- 20대 -->
+    <div class="age-content" id="content-20">
+      <div class="ac-header"><div class="ac-num">20대</div><div><div class="ac-hage">20대 · 20~29세</div><div class="ac-htitle">사회 초년생, 지금 가입 안 하면 나중에 후회합니다</div></div></div>
+      <div class="ac-body">
+        <div class="ac-hook">건강할 때 가입해야 원하는 보장을 모두 받을 수 있습니다. 20대는 보험료가 저렴하고 가입 심사가 유리한 황금기입니다. 월 3~5만원으로 핵심 보장을 완성할 수 있어요.</div>
+        <div class="ac-sub-title">⚠ 방치하면 후회하는 것들</div>
+        <div class="ac-risks">
+          <div class="ac-risk"><div class="ac-risk-ic ri-r">🏥</div><div><div class="ac-risk-t">실손보험 미가입으로 의료비 폭탄</div><div class="ac-risk-d">20대도 충수염·골절·응급실 방문은 흔합니다. 실손 없으면 전액 본인 부담.</div></div></div>
+          <div class="ac-risk"><div class="ac-risk-ic ri-a">💊</div><div><div class="ac-risk-t">건강이상 발생 후엔 가입 불가</div><div class="ac-risk-d">당뇨·고혈압·디스크 진단 이후엔 가입 거절 또는 부담보 조건 발생.</div></div></div>
+          <div class="ac-risk"><div class="ac-risk-ic ri-b">🚗</div><div><div class="ac-risk-t">운전자보험 사각지대</div><div class="ac-risk-d">면허 취득 후 교통사고 위험 높음. 형사합의금·벌금 특약 없으면 수백만원 손해.</div></div></div>
+        </div>
+        <div class="ac-sub-title">✅ 20대 추천 보험</div>
+        <div class="ac-recs">
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">실손의료비보험</div><span class="ac-rec-p rp-h">필수</span></div><div class="ac-rec-d">20대 보험료 최저. 지금이 가장 유리한 시점.</div></div>
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">암·3대질병 진단비</div><span class="ac-rec-p rp-h">필수</span></div><div class="ac-rec-d">2030 암 발병률 증가 추세. 진단 즉시 목돈 수령.</div></div>
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">운전자보험</div><span class="ac-rec-p rp-m">추천</span></div><div class="ac-rec-d">면허 취득과 동시에 가입 필요. 형사합의금 특약 포함.</div></div>
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">저축형 보험</div><span class="ac-rec-p rp-l">고려</span></div><div class="ac-rec-d">목돈 마련과 보장 동시에. 장기 유지 시 비과세 혜택.</div></div>
+        </div>
+        <div class="ac-cta"><div class="ac-cta-txt">지금 가입이 평생 가장 저렴합니다<br>월 3만원대로 핵심 보장을 완성해 드립니다.</div><div class="ac-cta-btns"><button class="btn-ac-f" onclick="scrollToSection('formSection')">무료 상담 신청</button><button class="btn-ac-k" onclick="openKakao()"><span>💬</span>카카오 상담</button></div></div>
+      </div>
+    </div>
+
+    <!-- 30대 -->
+    <div class="age-content" id="content-30">
+      <div class="ac-header"><div class="ac-num">30대</div><div><div class="ac-hage">30대 · 30~39세</div><div class="ac-htitle">결혼·출산·내 집 마련, 보장 공백이 가장 위험한 시기</div></div></div>
+      <div class="ac-body">
+        <div class="ac-hook">가족이 생기면 나 하나의 문제가 아닙니다. 소득 공백이 생겼을 때 가족을 지킬 수 있는 보장 구조가 필요합니다. 지금이 보장을 점검할 최적의 타이밍입니다.</div>
+        <div class="ac-sub-title">⚠ 가장 많이 놓치는 보험 공백</div>
+        <div class="ac-risks">
+          <div class="ac-risk"><div class="ac-risk-ic ri-r">👨‍👩‍👧</div><div><div class="ac-risk-t">가장이 되었는데 사망보장 부족</div><div class="ac-risk-d">자녀·배우자가 생긴 뒤에도 종신보험 없으면 만일의 상황에 가족 생계 공백 발생.</div></div></div>
+          <div class="ac-risk"><div class="ac-risk-ic ri-a">🧠</div><div><div class="ac-risk-t">뇌·심장 질환 보장 미비</div><div class="ac-risk-d">30대부터 뇌졸중·심근경색 발병 시작. 치료비 수천만원에 소득 중단까지.</div></div></div>
+          <div class="ac-risk"><div class="ac-risk-ic ri-b">🏦</div><div><div class="ac-risk-t">대출 상환 중 소득 공백</div><div class="ac-risk-d">주택담보대출 상환 중 입원·수술로 소득이 끊기면 이중 부담. 소득보장 특약 필요.</div></div></div>
+        </div>
+        <div class="ac-sub-title">✅ 30대 추천 보험</div>
+        <div class="ac-recs">
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">종신보험</div><span class="ac-rec-p rp-h">필수</span></div><div class="ac-rec-d">가족 생계 보호. 30대 사망보장의 핵심.</div></div>
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">3대질병 진단비</div><span class="ac-rec-p rp-h">필수</span></div><div class="ac-rec-d">발병 시 일시금으로 치료비+생활비 동시 해결.</div></div>
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">실손의료비</div><span class="ac-rec-p rp-h">필수</span></div><div class="ac-rec-d">미가입 시 지금이 마지막 적기. 40대 넘으면 보험료 급상승.</div></div>
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">소득보장보험</div><span class="ac-rec-p rp-m">추천</span></div><div class="ac-rec-d">장기 입원 시 매월 생활비 지급. 대출 상환 중이라면 필수.</div></div>
+        </div>
+        <div class="ac-cta"><div class="ac-cta-txt">가족을 지키는 보장, 지금 점검하세요<br>리모델링으로 보험료는 줄이고 보장은 높여드립니다.</div><div class="ac-cta-btns"><button class="btn-ac-f" onclick="scrollToSection('formSection')">무료 상담 신청</button><button class="btn-ac-k" onclick="openKakao()"><span>💬</span>카카오 상담</button></div></div>
+      </div>
+    </div>
+
+    <!-- 40대 -->
+    <div class="age-content" id="content-40">
+      <div class="ac-header"><div class="ac-num">40대</div><div><div class="ac-hage">40대 · 40~49세</div><div class="ac-htitle">발병 위험이 현실이 되는 시기, 보장 공백이 직격탄</div></div></div>
+      <div class="ac-body">
+        <div class="ac-hook">40대는 암·뇌혈관·심장질환 발병률이 급격히 높아집니다. 동시에 자녀 교육비·부모 부양 등 지출도 최고조. 지금 보장이 충분한지 반드시 확인하세요.</div>
+        <div class="ac-sub-title">⚠ 가장 많이 발생하는 위험</div>
+        <div class="ac-risks">
+          <div class="ac-risk"><div class="ac-risk-ic ri-r">🩺</div><div><div class="ac-risk-t">암 발병률 급상승</div><div class="ac-risk-d">40대는 암 발병 1순위 연령대. 진단비 부족 시 수천만원 전액 부담.</div></div></div>
+          <div class="ac-risk"><div class="ac-risk-ic ri-a">🧠</div><div><div class="ac-risk-t">뇌졸중·심근경색 급증</div><div class="ac-risk-d">과로·스트레스로 뇌·심장 질환이 급증하는 시기. 3대질병 보장이 핵심.</div></div></div>
+          <div class="ac-risk"><div class="ac-risk-ic ri-p">👴</div><div><div class="ac-risk-t">이중 지출 부담</div><div class="ac-risk-d">부모 부양 + 자녀 교육. 내가 쓰러지면 모든 것이 중단됩니다.</div></div></div>
+        </div>
+        <div class="ac-sub-title">✅ 40대 추천 보험</div>
+        <div class="ac-recs">
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">암·3대질병 보강</div><span class="ac-rec-p rp-h">긴급</span></div><div class="ac-rec-d">기존 진단비 부족하면 추가 가입 서두르세요.</div></div>
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">수술비·입원비 강화</div><span class="ac-rec-p rp-h">긴급</span></div><div class="ac-rec-d">실손+수술비 특약으로 실질 의료비 부담 최소화.</div></div>
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">간병보험</div><span class="ac-rec-p rp-m">추천</span></div><div class="ac-rec-d">장기요양 대비. 40대 가입 시 보험료 부담 적음.</div></div>
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">노후 연금 설계</div><span class="ac-rec-p rp-m">추천</span></div><div class="ac-rec-d">40대가 연금 가입 마지막 적기. 지금 시작하세요.</div></div>
+        </div>
+        <div class="ac-cta"><div class="ac-cta-txt">지금 보장이 충분한지 무료로 점검해 드립니다</div><div class="ac-cta-btns"><button class="btn-ac-f" onclick="scrollToSection('formSection')">무료 보장분석 신청</button><button class="btn-ac-k" onclick="openKakao()"><span>💬</span>카카오 상담</button></div></div>
+      </div>
+    </div>
+
+    <!-- 50대 -->
+    <div class="age-content" id="content-50">
+      <div class="ac-header"><div class="ac-num">50대</div><div><div class="ac-hage">50대 · 50~59세</div><div class="ac-htitle">노후 준비와 건강 보장, 두 마리 토끼를 잡아야 할 때</div></div></div>
+      <div class="ac-body">
+        <div class="ac-hook">50대는 보험료 납입 완료 시점과 은퇴 준비가 겹치는 복잡한 시기입니다. 기존 보험을 점검하고 노후까지 이어질 보장 구조를 지금 재설계해야 합니다.</div>
+        <div class="ac-sub-title">⚠ 반드시 점검해야 할 사항</div>
+        <div class="ac-risks">
+          <div class="ac-risk"><div class="ac-risk-ic ri-r">📋</div><div><div class="ac-risk-t">갱신 보험료 폭탄 확인</div><div class="ac-risk-d">갱신형 보험은 60~70대에 보험료가 3~5배 오릅니다. 지금 점검해야 합니다.</div></div></div>
+          <div class="ac-risk"><div class="ac-risk-ic ri-a">🏥</div><div><div class="ac-risk-t">만성질환 발병 후 신규 가입 어려움</div><div class="ac-risk-d">고혈압·당뇨 진단 후엔 가입 제한. 보장 공백이 있다면 서둘러야 합니다.</div></div></div>
+          <div class="ac-risk"><div class="ac-risk-ic ri-g">💵</div><div><div class="ac-risk-t">은퇴 후 소득 단절 준비 부족</div><div class="ac-risk-d">국민연금만으론 부족합니다. 개인연금으로 현금 흐름을 확보해야 합니다.</div></div></div>
+        </div>
+        <div class="ac-sub-title">✅ 50대 추천 리모델링</div>
+        <div class="ac-recs">
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">갱신 보험 점검</div><span class="ac-rec-p rp-h">긴급</span></div><div class="ac-rec-d">갱신형 보험료 인상 폭 확인 후 비갱신 전환 결정.</div></div>
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">간병·치매보험</div><span class="ac-rec-p rp-h">긴급</span></div><div class="ac-rec-d">60세 이후 가입 시 보험료 급상승. 50대 가입이 마지노선.</div></div>
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">즉시연금·개인연금</div><span class="ac-rec-p rp-m">추천</span></div><div class="ac-rec-d">목돈을 연금으로 전환해 은퇴 후 월 수령.</div></div>
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">유병자보험</div><span class="ac-rec-p rp-m">추천</span></div><div class="ac-rec-d">고혈압·당뇨 있어도 가입 가능한 간편심사 상품.</div></div>
+        </div>
+        <div class="ac-cta"><div class="ac-cta-txt">불필요한 보험료를 줄이고 핵심 보장만 남겨드립니다.</div><div class="ac-cta-btns"><button class="btn-ac-f" onclick="scrollToSection('formSection')">무료 리모델링 신청</button><button class="btn-ac-k" onclick="openKakao()"><span>💬</span>카카오 상담</button></div></div>
+      </div>
+    </div>
+
+    <!-- 60대+ -->
+    <div class="age-content" id="content-60">
+      <div class="ac-header"><div class="ac-num">60대+</div><div><div class="ac-hage">60대 이상 · 60세~</div><div class="ac-htitle">지금 갖고 있는 보험, 실제로 받을 수 있는지 확인하세요</div></div></div>
+      <div class="ac-body">
+        <div class="ac-hook">60대 이상은 보험 수령보다 보험료 부담이 더 커지는 시기입니다. 불필요한 보험은 정리하고, 간병·치매·상속 보장에 집중해야 합니다.</div>
+        <div class="ac-sub-title">⚠ 반드시 확인해야 할 것들</div>
+        <div class="ac-risks">
+          <div class="ac-risk"><div class="ac-risk-ic ri-r">💸</div><div><div class="ac-risk-t">갱신 보험료 폭등</div><div class="ac-risk-d">60~70대 갱신형 보험료는 가입 당시보다 5~10배 이상 오를 수 있습니다.</div></div></div>
+          <div class="ac-risk"><div class="ac-risk-ic ri-a">🧠</div><div><div class="ac-risk-t">치매·장기요양 위험 본격화</div><div class="ac-risk-d">치매 간병비는 월 수백만원. 치매보험 없으면 가족 전체가 부담합니다.</div></div></div>
+          <div class="ac-risk"><div class="ac-risk-ic ri-g">📜</div><div><div class="ac-risk-t">숨은 보험금 미청구</div><div class="ac-risk-d">오래된 보험에 청구 안 한 보험금이 있을 수 있습니다. 지금 확인하세요.</div></div></div>
+        </div>
+        <div class="ac-sub-title">✅ 60대+ 추천 대응 전략</div>
+        <div class="ac-recs">
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">불필요 보험 정리</div><span class="ac-rec-p rp-h">즉시</span></div><div class="ac-rec-d">보험료 대비 실효성 낮은 보험 해지·감액으로 지출 최적화.</div></div>
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">간병·치매보험 확인</div><span class="ac-rec-p rp-h">즉시</span></div><div class="ac-rec-d">미가입 시 유병자 간편가입으로라도 최소 보장 확보.</div></div>
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">숨은 보험금 찾기</div><span class="ac-rec-p rp-m">추천</span></div><div class="ac-rec-d">미청구 보험금 찾기. 생각보다 많이 남아 있습니다.</div></div>
+          <div class="ac-rec"><div class="ac-rec-top"><div class="ac-rec-dot"></div><div class="ac-rec-name">종신→연금 전환</div><span class="ac-rec-p rp-m">추천</span></div><div class="ac-rec-d">종신보험 해약환급금을 연금으로 전환해 현금흐름 확보.</div></div>
+        </div>
+        <div class="ac-cta"><div class="ac-cta-txt">지금 갖고 있는 보험, 제대로 받을 수 있는지 확인해 드립니다</div><div class="ac-cta-btns"><button class="btn-ac-f" onclick="scrollToSection('formSection')">무료 점검 신청</button><button class="btn-ac-k" onclick="openKakao()"><span>💬</span>카카오 상담</button></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process-bg fi-a">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">상담 프로세스</div>
+    <h2 class="sec-title">이렇게 진행됩니다</h2>
+    <p class="sec-sub">부담 없이 신청하시면 제가 먼저 연락드립니다</p>
+    <div class="process-steps">
+      <div class="ps"><div class="ps-ic">📋</div><div><div class="ps-t">상담 신청</div><div class="ps-d">폼 또는 카카오톡으로 간단히 접수. 이름과 연락처만 있으면 됩니다.</div><div class="ps-time">1분 이내</div></div></div>
+      <div class="ps"><div class="ps-ic">📞</div><div><div class="ps-t">설계사 확인 연락</div><div class="ps-d">24시간 이내 연락드립니다. 편하신 시간에 맞춰 일정을 잡습니다.</div><div class="ps-time">24시간 이내</div></div></div>
+      <div class="ps"><div class="ps-ic">🔍</div><div><div class="ps-t">무료 보장분석</div><div class="ps-d">현재 보험을 분석해 보장 공백과 중복을 찾아 리포트로 드립니다.</div><div class="ps-time">10~20분</div></div></div>
+      <div class="ps"><div class="ps-ic">💡</div><div><div class="ps-t">맞춤 솔루션 제안</div><div class="ps-d">상황에 맞는 최적 구성을 제안드립니다. 가입 강요 절대 없습니다.</div><div class="ps-time">부담 없음</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- KAKAO -->
+<section class="section kakao-bg fi-a">
+  <div class="sec-inner">
+    <div class="kakao-card">
+      <div class="kc-icon">💬</div>
+      <h2 class="kc-title">카카오톡으로 편하게 상담받으세요</h2>
+      <p class="kc-sub">전화가 어려우시다면 카카오톡으로 편하게 문의해 주세요<br>24시간 메시지 접수 · 빠른 답변</p>
+      <button class="btn-kc" onclick="openKakao()"><span style="font-size:17px;">💬</span> 카카오로 무료 상담하기</button>
+      <div class="kc-id">오픈채팅 바로가기</div>
+      <div class="kc-feats">
+        <div class="kc-feat"><div class="kc-ck">✓</div> 24시간 접수</div>
+        <div class="kc-feat"><div class="kc-ck">✓</div> 빠른 답변</div>
+        <div class="kc-feat"><div class="kc-ck">✓</div> 가입 강요 없음</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section class="section profile-bg fi-a">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">담당 설계사 소개</div>
+    <h2 class="sec-title" style="margin-bottom:22px;">믿고 맡길 수 있는 전문가</h2>
+    <div class="profile-card">
+      <div class="pr-photo"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCAETAPUDASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAAAgABAwUGBAcI/8QAQhAAAQMDAwIEAwUGBAQGAwAAAQACAwQRIQUSMQZBE1FhcQcigRQyQpGhCCNSYsHRFbHh8CQzcoIlNUNzdKKSs/H/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAQIDBAX/xAAjEQEBAAICAwADAAMBAAAAAAAAAQIRAzEEEiEiMkEzQmFR/9oADAMBAAIRAxEAPwDxUizjhNtupHNu4pnNsEAgAI2BByVLGLIHthAHWNlLa4QeF3sUD7cXRNRMZixTloCiB2uCIOCAtwkLqQRaSU2w3Ugb3TmxQAAAiIwm78pbh3QRuBCDcTypjayjcMoGBsRhTRnKFgCexBugJwugc0DgqRueUiLeSCAgkeaMN80988JE2NkDbfJSNaG8jKC9jdM6Qu4UAy8KJ7SU4BvcpiblSGaLYKc+ykOAg5QC05TuNikMlPtugcZHCSMCwskg5H4J90wyjkbucbeaYNDcoB2Hm6QJCdz74TdkDh+UfiKEH5sKUM3eaCUSBOBdA2O2bqVrh6oFa4smtZE4+oSBFroEHJeeUxtfCayBkgLlPjzQPlEQN7H62UUSWshc2/Cq6nWhDcBtyOVwv6qJu1sI9MqPaLetaSNmEQCzsfVP8UWPMLup+oqKUgSOMbj3INk9ojVWgGfRE5uEMb45Gh8b2vaeC03UhOOVbaEQblA4fMpbBC4fMgZp3AhDsLTwjDRdSFoIQQ2JwkBbsjvtcmJvwgfZdCWgIgfVJwDkEezyTgEFF90p9yBwMZSQ3SQczjZxTEhyaQfMbJ2tsLlAzWXN05GbKVpba5QA3ddAAbYqWM5SLbhO0ID5Ka1rpxg8pd0D2ukG2Tgd05IAvfCBgPTCiqqqGjYXzPDB29VzajqcdJH8rx4hGAf8yqltG+ueZZzM+/ncXHpxZUuWl8cNpp9cfUutSwnYL3Lub/8A8upvs0xi8R/yOLrHuAP7qaFmn6TEXhrQByD8zlw1WrsjkBbteCcAkn9Bz/dVq8kP/gs2oOdJEyJrcWa4Fx9vJBLpklPctY3fwBbHsu+m1dry3x5qhjbcbSLD8uF0NmjqriJzXDs5rgfzBsVTdX0y0hkjuTTNPu26gd4b7XaYz5gY/IrRy6ax33mSNd2JuLfRVVbRhrtzju283BB/NSiuWKWelPiQSltu7Sr/AEzqRk1oa4CN/AlH3T7+SzI3NzG/jt/vlGHRvIv+7Pf+E/2Uy6Us23wNwCDcHuEJsszpmrS6c8QzEyU5/wDr6j0WlBZKxr2ODmuFwR3Wky2zs0NoB7ouOEF7cFIEnupQIgFBweMJ8k8og1SAaLnKJwsE9rIe6BsE+qfA7pnAc8JgLlA5F0kQFgkg5CPnPun2gpjckpwcIBeC3ATxC3Ke590QAIQECCE5bhBewsjaSW5CAcXRtN0OO6JoBQECOFz19Symgc9w3W4bfk+S6MNySLDklZiqqnaxWyNEhZTRfjHv29Sq5XUWwx3So2y1dZeGN8017k2uGf0A/VXdUJ6SF26JkkhJ+ZxwPb0R00McEDAw+AwC4iZfcfU+ZKkqoxVRhrpCyJrcm13W/wAr+6x26pioGOfqUojfDGxwJA23ypNQ0+SkcfD3Nl2kkjBtfAP5pRUkcdQDCXOcHX2lu7F++AF6Hp3S1X1FShxp7tADWvay2LevPCi5an1GHHbfjzOHW9RoW7Ip7Nvnld1BrYqpNs9OXHzZYf6rb1/wlqHMMhBa44sBYjzWc1L4d6jQAujLzYcWuonJiteHOX7CfVRsAwXMtw4rjmniksNhc3jzFvdcpgrqP9zVRu8MYzf/AGFzzNkpyTE9wY4f7urTKK3ChrtOina6WBohlGR5P91VEgu2TMLH2tf19V2/aQSb3Gex4KjnjMkZNyXc+/8Aqp2zsQxyPgBYWiSO/dW+j6kKWUQuJNO84J/Af7KlikNs5B/CpbCOzmu+W/J/CVM+F+xtx6Itt8qt0Gu+1U/gSH97H58lqtRgWWsu2Nmg2RtSJHomtbupQTgh2XRFO3OEEbm3QgZUz2WOCgPyoDDcDCSHxCkg4gbuITuNkW3JsUwGcoGGUbW2QkWyCjY64QEW2yU4tZPbd3Say3KBiy4wm2kKVuMJi7KCp16ofFTMgZl85t9FwafE2OQ7Y2vItsBNhu7uPoEtdndLqAZu2tjaBuPbuVzvrPAgID7OeO3LWf6rDK7rowmovBqDIYiN24B1t/eV39gggiqteqWQRNftJ4bhpP8AVVmi6XNqdVGyzgXYbGD90L6C6A6Fh06BlRINzyPvELLl5JhHTxcVz7cPR/wqjigjqa6Jj3nIb5fRemUWjU1JA2KGna1rRgBWVDStIFhb2Vm2iFrhcN9s+3bPXD5Gfdp7HDLA70Iwq+r0SneMwsv7LXyUdrLiqKYEX/zUXCxacsed6n0VRVbHEwMznhec9UfDvwmPNO3aQMAcL3ipisCMKk1CiZM0h1kx5MsbpbLDHKPk/UNOko5XxysN2my4hKWnYSc8EL2nrfpCKp3ysG1wvx3Xj+oaeaSdzHjaW916HHn7R5nNxetcssV9zwNp7p4XgEXFwcEEco2b3hwJ+YC1vMeiiljLFo59OyiqDp9dG+/y3/Np5C2htYEG7SLgrAh/iDwy/P4T6rZaVManToHl247QCr4Vnm6zlOCOEgR5pxHc3Wihr2Sa4W4RFtkJKBb7lC4XR2HmgPPmgCx7BJSgYykg4ybEpg76pyLuPukGIEXXARM+UXQEWF7o2HeOEBxOyjJsgaLcJ3AoCvYXUZceUZyPJRyt2xSG9rNOVFIytdaerJ7XLiT5Bc8AM1Qb2JuOfP8A0TyVGyNzskuwPYf6rs6TovturRBwDmtcDa/JWE626tdR7L8L+i2iJlbPH94Xue69jpYQ1gAbYDsFTdM0gp9PgjIDSGC4HANlpaWJebnlcsnrceMxxdtAzjCuWgBgwq+miLbXB+ismD5R+a34p8c/Ld1FKAB5KtqS3acD2VhUvDWkXtdVcp3d+ynNGEVtQN9+91WVUd3K3ey4yfyXBUtaTgWXLlj9dcrKatRCW/y3BXlPXXSd4zPC0Atyvba2G4JWS12kbLG5jm3BwtePKys+TGZR85TReGXGxaWmxHl6I9jZYwQSHj9fRaHq7RXafVOqGg+G42dYLLkPjLiw2bbI/qu6Xc28zPD1unO9vhm4P+hWp6UnD4Jo7i4cHEe6ztUfFBf+I8+67+kZXDUzHa4kjN/QhaRhlGt5KkZgcIeDhE0rVmR8igIUpGL3soiTe10DWN09k/I5QBx3WQGLAJJFJQOPuSiDgAmcLOKYkFSCcLtQswjAwnAQE0/kncQnAwmeEDF2bKDUpQzT6g/yWU4bm65dZs3SqjGSFXLpM7YurkDPCbcXAC9D+EGitrNUjc6Pd/6h8mt7fU8rzaVwfOC7i+R6L3n4FUDnafUV8gzK8tGOFz82Xrg7OCe3I9gotkDC6R7WMHLnYAUU3WtBQzFjGGZrBlw4XNXaRNqzmQvnMFI3Lw3mQ/2VrQ9G6NLEI5KZsl8lzjz7rgwknb08+ih+KehNY0SRz372beysabr/AEivaDBPYOxZ4sR6Kk1LoXQS/wDdPY0+THgrPz9IR0dSZqapc4eo7rW8mumWPHL29Il1BszGuYcOHK5XThvNrlVelveKdjX8gAKStm8IEngeSzuVv1pMJDV+rU9FTmSd4YBc3WPrPiRpcMlgHPF7bk2vwT61KIonPDOCAeUNB8KKN0RqK6cRNAvdzg0KcdXsy3OnPJ8RaCcFrKZ7retlW1HUNLXu2EGInjdwfqrx3SXT8TNlPJFNtP4ZAT+ipNX6e09zTHGDET3BV56s77dsr1XQR1tJIxzQd17W7eS8lfG+mmMT8PY4jIwfReyOpJWxmmmf4m3h/mF511zpn2d7aljRzZ1ltxZfdObmx3NsrM9oL2WIaTj0Xf0mCNXY7NmtO70VW94mBGM8FWHTdQ6PV4W4tJZpx3C6Y4MrtuA23KNtktgDUzRbutVDlCR5or2QkgoBIzhDtyCjwE49coFsuEk5fwkqpcLhdzkwjsnNy4owcKyDDhEDcBNtxhSMbcIE0onccJrZTk3QAfRQahEZaGZnm0roNuEw+YEdiLFRSPOXfJUAG+O3mvpT4GQtHSTHWFzM8G3c4XgU+nbdU8N0ZNyNhH8QP9l9A/BqTw9Ckg2lmyodz6gLj8m/g9Hw8fz29KlHhRb7CwGAvKOpureoOo9bfpOlMngomO8N8xBbG31cRz7fmvYI42Ts2uYx48nBRjSXRPD4I4gO7AwWK4uO/dvSznzT5f1qq1jS6qSNkmotroKkxSSuIbCGDhzbG5J54svTOiOp9ZqWs0/VgZZ3RiaOUZ3N8neRC9P1HSp64tB02G44Oxtguem6RibIJpYIY3tIIeORZb8mWOU6c3HhcLu12aLeYM3DJTa/CIGOvjCsKCFsXhgCxGAubrQbIyWnFvJYa+NrfyY6KuZSRT1DiGthaZHvJsGtAuSSvM+pOpeoOpIBrk/2tujCbwWRQEb2N7O2mwAJ5cV7FoumQ6hp88L4o5BK5u9r23D2jNiD2VqdMMTQGUdNZosBsGB5LXisx+1Xm/KalfK+nQ9RVcsksb5o3gudi5GDj5hz9FtunuoazVITTVwcKqDB3nLv7+69fr9GmkFhSRR3P4WgKmd0lSRSeNLTxmU5LiBdTnyS/wAU4+HX92y0tI50fiAcC6wXW1KJaKY2yMr1rUjFFA5jWgWwvMOq7GjqcZ2Gycd+q8uOo8ecXRutfhW/TUPjazTuubMvJ7rlraQiN0je2Tci6tOhoXSVk8pbiNgFz53XoT79eTZr5WxcT2Qgm9kN7pX7haKDccID8yRdcIQ63dA9ilfCcG6E8oHAuOUkySjQ5bfMUVlI0BxPmnLbdlIFqIAhOGpnAgICabd0LvdIE2TC5QNlEGpw3CRwg6tBpaR/UumzVZ2xCdrZHXtg4/qvUuj6Nmk6jX0cQIaH3uRyci/6Lx6pzCWgkAi1xyvT/htqz9W6fpa2WV0lSCY5XO5JHn+Q/NcXk4/16XgZzenqFJKLgXwtHRNa9gdcHCxtLNZwxdaGgrxGzb2XDxXV+vW5cN4/FpPZlgLKBjGyuO7IHKF9dEG+I8iwVZN1RTirbSU7DLK/ho/UnyC2uUcs46s2AOmBGM2sqzrUF0Lrc2VjSO3yNuLEkYXJ1cNrHbhnbeyj/VHWSh6Vqdr9pOAtmIwW3HfsvKdH1epoatzvBL4Lm5Xoem67BW04fG9pHuq43Xa+eO+klawDKz2pSWa5XlZUgg5us1qUwAcbKtu23HjqMfrlV95oK896k/exbL4fYH2utfrs5MzwCsjqrDPIyPdYkHPlha8fbDyPrC1VEf8ADK2plkLGRjYwW++SbCysumqQUunRlpNpG73Lg6zrGsli0uPiK8j/AHPH+/VWPTkviaVD/Lcfqu/j6+vI57LdRaEi+MpyL4TAXKLblbOcwbjlDa6O9kBBKbCuB3TA3KaxJ4UgaAga9gEkYbhJQlzNPzFHe6jJs4qRpBClB7pibpEYSyECA9U17FLceEg25QOHEFM71TkXTFADxdtzxlWXwl6ki0/U5dGeXFtYQ+A9g5oNx9QP0XDtDhtOA7CyOkai7SNaodSHFLUse7/pvkfldYcuPt8dHj5+uW31fR1DS0X5Xe2tYwZNrLOuc4xtngduY8Aix5C5aitncCwNN15np9292cvxb6z1Bsj2ROu44AHmj6Ui/wAP8fUa028YAbnHgX/RUmn0Tn1jDOQX8gX4W8g02OqofAcwOY4bXA8FWkUvIKPqHTm1jHwTxyAAfiBXH1X1DSzxve+VgG21gcqrqfhjQwNkqKNr4JDwWOtZZHUekdSlEn/GPLR2sravSm5buO4a/ptPQvj8Vhe7gXzlc/TWsSM8V8TvlDjYHyVDH0i6N13NDnX5KuqCgGnt24z3SyEyrW/482aPJyqXVNVbtIvb6rmlY4sL2GxPKo9TZUZuq6i/vpXajU+NKbFZnWdX07TKjfXT7CGEsYBdz89gr4QOuXuXkvXtYKrqKVjTdsDRH9eT+pXRw4e1cXkctxm1bX1rtSrqiskwZX7reQ7BanpGTdQvYeWuP5LFsNoz75Wq6PltLLF5gFdnTzbbfrTNPqnv5pE+iQWihDlATYo91uycgHIUQM0JOdjlDcnCcNwpDtdhJG1mElA5doJNvNOG2Ti24+6McKQzWkoy35c5TXxhJ1wEABtykcImAjPZM4XygEFMMm6K4AsnAAQA8nadvPZYao+bxWH+b/MLdPPynbyOFg6o2leB3N/a6zyaY9Pfvg51O3qDpplFO/dU0NoX3OS23yn8sfRb8acx5J72wvlbofqubo7XIq5pcad/7uoYPxMPf3ByvqXStUg1ClhqYZGyRyAOa5vBByFwc/H63cep43L7Y6riloa+ndLLRRslnBu1j3bQ70v2UGkfE3URVSadUdPVFLXQ2BZJIC14va7XfiWsi23D/PuuPWqSEiOr8Bsj2G+Rn3Hqspl8d3DjjllquGp+J+ow7Wyaf4cbsfvIzn2KrNY+JVNDC1sVLD4kgs4byf0Wi0eokkDZoo4aqONxuyQgPzfGVw1VZNJVzSN0KlZYYkMouLXvf5fZW3Nb27LwZy3GcUt/4xUvWFbOGvg0kyNcdofu2gnvys1rPXmoitjpKHThUzvwWxyfKzPBNlqdYgMlO5tXO2Ih7nNbTDbe5Nm+Z5XN0vpEETnSCFrSc8ZU45Y/xz+R4+WE3yan/F9oFHVVFJH9p2tld8zw3IHpdc2tNDZvDZa17K+gmFNA5/AA5WS1HUAZXyE8Kvdcd6UXU+pQ6TQTzkjZC2//AFHsPqV4PUVElTPJPKbvkeXOPmTlbD4k6/JWVjdOjJEcf7yT+Zx4/L+qxY8vJehw4ax28ryeT2y1/wCJmD93a/krrpmYxalH/MLFUsQuw5yu3TpPBqYXjseyvWEegl/kk16GOzo2u8wE5FleKi3Ao22UQsDyEZIt5KQnWCcOwgLiUr4ygMOSQjjmySrUo3CzifVGBhBu+YogQrIPcBPcO4UZuCkwkcIJC6yRdcIHZTDCgOGi97onC4SAzcJymgNiBfyXn9UP3smb55XoEjrRn8151UOHi3bkEAn3VL2vjUb/APl+5Xp3wm68/wALezRdQmtTOd/w8jjhjj+A+h7Ly9zt20c+alcQyMAHJzhVzxmU1V+PO45bj7K02tbUsbtII8lZTQ/aIDZeOfC7qGsf0vS1k8rp9jnQvJ5+U4/Sy9c0bUoKiFr2uBa5edlj65aevhl7TcZrU6WelcSxhv8Aym11UzalWxtcxkMhJ5uV6dJSU1SNxZc+gXFNo1O7JaAPZLhK7MPO5sJ6zJ5WaKrqJRLKw3V5RUppYgHCxK1k2n0sQJLQNvOFl9a1GGGRxa4ANT/jm5M8s77Z3bm1zUxT0vhtPzOwFiq2qdLeNp4+8fJdFfqE2oTktJtwPQLjnZ4ce1v1JUyMcrt5B1PKZderHOPEm36AWVbbIPqrvq+h+z6oZWizalpk+tyCqWP5tze/b3C9PHqPIz/apaf7wbfBwpYiW2aeWuXOw5txldDwGvBPDwD9e/6hRURvdHn8egjOLjBXUSFTdLz3pzGRa+VdkC6viihAFimJPupbBRuOcKUHYO6c+6TThCXXKAhwknbYhJQlzB/zG6IPygeDf6omhEDvdG21kA5RA2UhiblEwJjYJwcIF3Tn0TD1KK1+EHPWO2QPN/wkrzmQlpyvRNUxRykHIZded1PyyOF7/KCqXtafEW+3ZEJHPAYMuOB7qEm9vVWem0piJle0l5w1oU6Ra9o+C9DK3paZszHeG6pcWOPDsAOt9cLaE1GjSl8BcYjks8vUKxpenR0pp2haJsa11LQM8b1lf877/Vy6KilDhwvN5L+detw7mEPQ9YN2NDnldE/VkDB/zOyztbpAN3NaWnzaqyooZwLb329VSVt7LPV+rnSscyC+TyslVzS1T7vcbeV11von5J3H1KD7IQeFO1LltxtjDRYKKohcWEAXe7AHmVaNpTa5CCuezQtHrdfqfu0zD4DT+OQ4H6q+GPtdMuTOYzbyD4gzMPUJo2EFtDC2Akd38u/U2+iy5aWkOb2XRLJJUTSTTOLpJHF73HuSblAWr0pNTTy7d3aPd8xcOCpy7fCD3af0UD2WO4cd0o32xflVsTK0nT1TsmaAeTYrXDlee6ZN4M/6j3GQt/DKJYGOGcBMSpbXTWGUBdY8pZ5KugxNjjhIpxa/mk8i2FFQV7JIWnCSlJC9zdEBhMeT7pDJRAtuU7mpgSPVLdnKBjnCcDCIAH2UctVTU4vLPGy3m7KCRo9E+3Kqp+pqGIkRB8x9BYKsqepq2YFsIZAD5ZKaF5qrmilkDy0Attk2usHLSOmlJBDW2tcrslnkndulkdI7zcboCbNNiSU9U7QU9G2OQAC57krc/C3p09T/ABE0LS2sD4zUtqJhbHhx/O7/ACA+qyVOzF72K+iP2UOlWyVOrdUTsu5pFDTkjgfeeR/9R9EyI3nUsn2/qDVJRa8FQIvyY3+65/B3wgjlDQP+26n1E45/8TlH5AD+i66dt2EX4Xj5Xdr2cZrGRWyQXba2VXT0heeAFoXRBx2kWKgdTMJsRlQMzJp98ALlkobYstg+iZs3WHCpa1m1+1jbucbADNymxXabo7tQrBC0HY0XkcOw8vcrzv48621s9H0/TFrYYx4srW8XGGhe9S0EHS2gvklcBMWmSV5/it/RfIHVOsP6h16r1J5JE0h2X/gGB+n+a9Dg49R5vPye11FMWp7Y4RG+UmgLqc4fDuFA+A3O3su1oCjYAXvP81ksEERcx7bi1it3o9Q2Wkjsb2btI9QseYw5d2m6nLpr8s8WI2vmxCpcanbZWvnula+Mrmo9UpKxo8KZod/A7BC6yPopQYNso3gqU/dUbxjlNpJtgEkINu6SkGT8x904Nioi75jYowUQJ36qk1TqNtK4w0rWyS3sXHgKfXK80dKWscRJLdrbdvMrJxNuC93c4UwWM2s6hUt2vm2juGCy47XJJJJ8ym+t0twHKnSRcdghL74CYux3Sjbi5UggNoCYNueOUnngAqSNo4uhEsTXOc2Jn3nODQF9vfBzps9J9AadTSs2yva6plx3dnP0svlX4OdJO6x+IGm0GwmnhJqqjyDGf3Nh9V9razI2h0GumZ8ohp3kAdrNKyzvdWwm68n6EjfPQahVuz9prJZR9XFXNNTOLZMcFN0rROounqSGw3OYHH6q7gpmsBBJBK8jW69m/FGYX34KTaZ7zkBXzqSNue6hMDb44SxEu1LXs8GA4AUnRugHUKyXVKlv7mn+WIEfef5/QfqV2Sae6tnZEwbnyO2tC01cyLQNGEEAwxu0W/E7z+pW/j8e7uufyOT1mp28S/aC6wbp2gy6bBJ++qz4AAOQPxH8sfVfMZHoFu/jFrb9U6zqYPEDoqH/AIe4HL73ef8A8jb6LDOIvyvRxx+PNqMtThuE7iL2ukAryIEBx/RRwi4ef5ypm+6Gmb8jxz87lIOwBT7fqi2580reakAW5v3XZRaxWUR2tk8Rg/A/IXMfP9ENucqLBpqbqOlns2UGB3m7LfzVg17ZGbmOa5p7tNwsOdo5NkUVVPSOD4JnRH04PuFW4jbAXyks/D1Y5kYbPTNe/wDia6wP0SVdJXpad5KPaUTsOPukBcqUMj1JUeJqT2j7sTdo91wtFmNHon1R5krKlxPMjv8ANC0lWiT7rFMDd4SunZyT3UoMWu/AQCPySbLY7XgsP6fmibyicNzbHIQM1t3ZUoGcBC3gKRjS921vLrAJR9M/sk9PCLTda1+Rg3zvZSxO7hrRd36kfkvaOuJvs/SWpOHL4vDH/cQP6rNfArQjoHw8oIHts+Yumd9Vb/E+Uw9K7Wm3iVVOz3G8f2XPyX8bWvFPzkcNLCIoo2CwaxoaPyXYDi9uFCw/I0kXBClbxnC856lA4F1kDmnAHJ5Up+9wLJ6eA1VS2Jh+Z5tfy9VMm/iLZJta6HQNaTWObkDaz+pWY+K3VEfSvTdXq0tj9lYXRMP45Thjfq4j6XW7kEdLThjTZjG2C+Wf2n+sPtmpUPTED/kph9sqQP43AiNp9m7j/wBwXo8eGpI8vkzuWW3hNRLJUSPlmcXySOL3OPLnE3J/Nc5BBDbeykcb+yEj1st2YLZsbIwMISdxuAT7BPeQ22sA9XFBIBbzKCA7TICPxX/RG1sjgdz7f9ITkMhY6R1z3JKCS3oltsFFSvfNF4j7C5uB6KYqSBdYWCjJ9ETkDrkgXUJNzkjHZRTPsEb3WXLI/e4i6VAd5PdJCUlUekyH5000whp5JTwxpKd/JXBrcvhaTOb5cA381AyE7jIXudy4lxUgPyhQu+YWGFLwLXVwJdYomn5b25KA48lI3DR7ICbyi5+iEEA+ScZ/qgMDjstF0DoknUPVdBQMbu3SAuAHZZ3ytZe4fsu9OfbupqnVnt/d0sZAJ/iVcukx9S6bRs0+hgpY22bEwMA+iz/xOZ4ug0kdr3r4MfVajJ5Wd69s6k0uIn79dHb6AlYc36Vrwf5I5WAAAeQRX9U3fyQk7hi4XnvSs2dzjwFe6BReHC6qe0B78M9G+f1VTp9G6tq2Q8N5cR2b/vC1Li1jAGgNaMAeQXT4+G77Vy+TyanrFT1DqNPp1BUVdVJ4VPTxummefwsaLk/kF8E9WdQz9U9R6jrVQLPrZ3S7P4W8NH0aAPovpn9p/q92jdHx6HBJao1mTY8DnwGWL/zO0fmvk6Qk5XfjHEFxucJicJDCRFuVNQZvGMKRo+VC0WwpB6KQh5LmqXmeVtMw4vdyllmELHPPYfmUOmwFoM0g+Z5VaOoNDGhgwAEnnNkQyR3QSGxUiJ7rAdkAOCbIJHku29zhKR9hYdsIAmf+ag2nupbbjmyGQgC3kooh5JSTs4SUD0nufdVPU3/lg/8AcH9UklGPaWV5dZSO4KSS0IAqYcfkkkoqC7hEMC/dJJAbRwvq39lmniZ0hVzNYBI6cgu7nASSVckzp7iOCs1119/RP/mH/wDW5JJY8/6Vt4/+SIWC4ueVGTZzrJJLzno/1f8ATzGilnkA+Yvtf0AVhMfkSSXo8P6vN5v3r44/aYq56j4o1MEsrnRU1JAyJp4YC3cQPckleSPGR7JJLonTKB/uiOXD2SSUh7fMiHF0kkQ5an5qiFhy0uyF3+nYdkklWdh7neB2UVRgJJKUuKE3q8+RUjgLnHdJJR/D+InEg4Ucn3CkklQij+6kkkoH/9k=" alt="김은경 설계사"/></div>
+      <div style="flex:1;min-width:200px;">
+        <div class="pr-name">김은경</div>
+        <div class="pr-role">(주)글로벌금융판매 모아지사 · 팀장</div>
+        <div class="pr-tags">
+          <div class="pr-tag g">경력 10년+</div>
+          <div class="pr-tag g">생명보험</div>
+          <div class="pr-tag g">손해보험</div>
+          <div class="pr-tag g">자동차보험</div>
+          <div class="pr-tag">실손·건강·종신</div>
+          <div class="pr-tag">재무설계</div>
+          <div class="pr-tag">법인절세</div>
+        </div>
+        <p class="pr-quote">"보험은 필요할 때 제대로 받는 것이 전부입니다. 고객 한 분 한 분의 상황에 맞는 최적의 보장을 설계해 드리겠습니다."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="section form-bg" id="formSection">
+  <div class="sec-inner fi-a">
+    <div class="sec-eyebrow">무료 상담 신청</div>
+    <h2 class="sec-title">지금 바로 신청하세요</h2>
+    <p class="sec-sub">24시간 이내 연락드립니다 · 가입 강요 절대 없음</p>
+    <div class="form-card">
+      <div class="fc-hd"><div class="fc-dot"></div><div class="fc-title" id="formCardTitle">무료 보장분석 신청서</div></div>
+      <div class="fc-body">
+        <div class="f2">
+          <div class="fg"><label class="fl">성함 <span class="req">*</span></label><input class="fi" id="f_name" placeholder="홍길동"/></div>
+          <div class="fg"><label class="fl">연락처 <span class="req">*</span></label><input class="fi" id="f_tel" placeholder="010-0000-0000"/></div>
+        </div>
+        <div class="f2">
+          <div class="fg"><label class="fl">나이대</label>
+            <select class="fsel" id="f_age">
+              <option value="">선택</option>
+              <option>10대</option><option>20대</option><option>30대</option>
+              <option>40대</option><option>50대</option><option>60대 이상</option>
+            </select>
+          </div>
+          <div class="fg"><label class="fl">직업</label>
+            <select class="fsel" id="f_job">
+              <option value="">선택</option>
+              <option>직장인</option><option>자영업자</option><option>주부</option>
+              <option>프리랜서</option><option>학생</option><option>기타</option>
+            </select>
+          </div>
+        </div>
+        <div class="fg"><label class="fl">관심 분야</label>
+          <div class="fchk-g">
+            <label class="fchk"><input type="checkbox"/> 실손보험 점검</label>
+            <label class="fchk"><input type="checkbox"/> 전체 보장분석</label>
+            <label class="fchk"><input type="checkbox"/> 암·3대질병 보험</label>
+            <label class="fchk"><input type="checkbox"/> 보험 리모델링</label>
+            <label class="fchk"><input type="checkbox"/> 노후·연금 설계</label>
+            <label class="fchk"><input type="checkbox"/> 자동차보험 비교</label>
+            <label class="fchk"><input type="checkbox"/> 재무설계·법인절세</label>
+          </div>
+        </div>
+        <div class="fg"><label class="fl">연락 가능 시간</label>
+          <select class="fsel" id="f_time">
+            <option>언제든지 가능</option>
+            <option>오전 (9시~12시)</option><option>오후 (12시~6시)</option><option>저녁 (6시~9시)</option>
+          </select>
+        </div>
+        <div class="agree-box">
+          <label class="agree-lbl"><input type="checkbox" id="f_agree"/>개인정보 수집 및 이용에 동의합니다. 수집된 정보는 상담 목적으로만 사용되며 제3자에게 제공되지 않습니다.</label>
+        </div>
+        <button class="btn-submit" onclick="submitForm()">무료 보장분석 신청하기</button>
+        <div class="form-krow"><span>또는</span><button class="btn-fk" onclick="openKakao()">💬 카카오로 신청하기</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="ft-logo">김은경 · (주)글로벌금융판매 모아지사 · 팀장</div>
+  <div class="ft-disc">본 페이지는 보험 상담 신청을 위한 안내 페이지입니다.<br>수집된 개인정보는 상담 목적 외 사용되지 않습니다.<br>📞 010-3602-9378 · ✉ kukime7@hanmail.net</div>
+</footer>
+
+<!-- FLOAT BAR -->
+<div class="float-bar hidden" id="floatBar">
+  <div class="fb-text"><strong>🛡️ 당신의 든든한 보험 파트너</strong>김은경 · 무료상담 · 자동차보험 비교</div>
+  <div class="fb-btns">
+    <button class="btn-fb-k" onclick="openKakao()">💬 카카오</button>
+    <button class="btn-fb-c" onclick="scrollToSection('carSection')">🚗 자동차</button>
+    <button class="btn-fb-f" onclick="scrollToSection('formSection')">상담신청</button>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-ov" id="modal">
+  <div class="modal-box">
+    <div class="modal-icon" id="modalIcon">🎉</div>
+    <div class="modal-title" id="modalTitle">신청이 완료됐습니다!</div>
+    <div class="modal-sub" id="modalSub">24시간 이내 연락드리겠습니다.<br>카카오톡으로도 바로 문의하실 수 있어요.</div>
+    <div class="modal-btns">
+      <button class="btn-modal-k" onclick="openKakao()"><span>💬</span> 카카오로 추가 문의</button>
+      <button class="btn-modal-cl" onclick="document.getElementById('modal').classList.remove('show')">닫기</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const KAKAO_URL = 'https://pf.kakao.com/_jTyxlX';
+function openKakao(){ window.open(KAKAO_URL,'_blank'); }
+function scrollToSection(id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const header = document.querySelector('.site-header');
+  const nav = document.querySelector('.sec-nav');
+  const offset = (header ? header.offsetHeight : 0) + (nav ? nav.offsetHeight : 0);
+  const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+  window.scrollTo({top: top, behavior: 'smooth'});
+}
+
+// Age select
+function selectAge(age, btn){
+  document.querySelectorAll('.age-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.age-content').forEach(c=>c.classList.remove('show'));
+  document.getElementById('dynPH').style.display='none';
+  const el = document.getElementById('content-'+age);
+  if(el) el.classList.add('show');
+  const label = btn.querySelector('.ab-label').textContent;
+  document.getElementById('agePrompt').innerHTML = '✅ <span>'+label+'</span> 맞춤 분석을 확인하세요 ↓';
+  const sel = document.getElementById('f_age');
+  for(let i=0;i<sel.options.length;i++){
+    if(sel.options[i].text.replace(' 이상','').includes(label.replace('대+','대'))){ sel.selectedIndex=i; break; }
+  }
+  const titles={'10':'10대 자녀 보험 무료 상담','20':'20대 맞춤 보장분석 신청','30':'30대 가족 보장분석 신청','40':'40대 보장 공백 점검','50':'50대 보험 리모델링 신청','60':'60대+ 보험 최적화 신청'};
+  document.getElementById('formCardTitle').textContent = titles[age]||'무료 보장분석 신청서';
+  setTimeout(()=>document.getElementById('dynamicSection').scrollIntoView({behavior:'smooth'}),120);
+}
+
+// ★ Google Apps Script 웹앱 URL을 아래에 붙여넣으세요
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyAyMTHbCcEme3tSP8kNRxWmEJFYzNaHrt-Zh0KJsFkBiT2BGKNqnLg5rVjq_dRnbwG/exec';
+
+// Form submit
+function submitForm(){
+  const name=document.getElementById('f_name').value.trim();
+  const tel=document.getElementById('f_tel').value.trim();
+  const age=document.getElementById('f_age').value;
+  const job=document.getElementById('f_job').value;
+  const agree=document.getElementById('f_agree').checked;
+
+  // 관심 분야 체크박스 수집
+  const interests = [];
+  document.querySelectorAll('.fchk input[type="checkbox"]').forEach(cb=>{
+    if(cb.checked) interests.push(cb.parentElement.textContent.trim());
+  });
+
+  // 연락 가능 시간
+  const contactTime = document.getElementById('f_time')?.value || '';
+
+  if(!name){alert('성함을 입력해 주세요.');return;}
+  if(!tel){alert('연락처를 입력해 주세요.');return;}
+  if(!agree){alert('개인정보 수집에 동의해 주세요.');return;}
+
+  // 버튼 로딩 상태
+  const btn = document.querySelector('.btn-submit');
+  btn.textContent = '전송 중...';
+  btn.disabled = true;
+
+  const payload = {
+    신청일시: new Date().toLocaleString('ko-KR'),
+    성함: name,
+    연락처: tel,
+    나이대: age,
+    직업: job,
+    관심분야: interests.join(', '),
+    연락가능시간: contactTime,
+    신청경로: '김은경 설계사 홈페이지 보장분석 신청',
+    설계사명: '김은경',
+    설계사이메일: '01036029378a@gmail.com'
+  };
+
+  fetch(APPS_SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(payload)
+  })
+  .then(()=>{
+    btn.textContent = '무료 보장분석 신청하기';
+    btn.disabled = false;
+    document.getElementById('modalIcon').textContent='🎉';
+    document.getElementById('modalTitle').textContent='신청이 완료됐습니다!';
+    document.getElementById('modalSub').textContent='24시간 이내 연락드리겠습니다.\n카카오톡으로도 바로 문의하실 수 있어요.';
+    document.getElementById('modal').classList.add('show');
+    // 폼 초기화
+    document.getElementById('f_name').value='';
+    document.getElementById('f_tel').value='';
+    document.getElementById('f_age').selectedIndex=0;
+    document.getElementById('f_job').selectedIndex=0;
+    document.querySelectorAll('.fchk input[type="checkbox"]').forEach(cb=>cb.checked=false);
+    document.getElementById('f_agree').checked=false;
+  })
+  .catch(err=>{
+    btn.textContent = '무료 보장분석 신청하기';
+    btn.disabled = false;
+    console.error(err);
+    alert('전송 중 오류가 발생했습니다. 카카오톡으로 문의해 주세요.');
+  });
+}
+
+// ★ 자동차보험 비교견적 Google Apps Script URL (보장분석과 동일하게 사용)
+const CAR_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyAyMTHbCcEme3tSP8kNRxWmEJFYzNaHrt-Zh0KJsFkBiT2BGKNqnLg5rVjq_dRnbwG/exec';
+
+function submitCar(){
+  const num=document.getElementById('car_num').value.trim();
+  const name=document.getElementById('car_name').value.trim();
+  const birth=document.getElementById('car_birth').value.trim();
+  const tel=document.getElementById('car_tel').value.trim();
+  const type=document.getElementById('car_type').value;
+  const curr=document.getElementById('car_curr').value;
+  const expire=document.getElementById('car_expire').value;
+  const agree=document.getElementById('car_agree').checked;
+
+  if(!num){alert('차량번호를 입력해 주세요.');return;}
+  if(!name){alert('성명을 입력해 주세요.');return;}
+  if(!tel){alert('연락처를 입력해 주세요.');return;}
+  if(!agree){alert('개인정보 수집에 동의해 주세요.');return;}
+
+  const btn = document.querySelector('.btn-car-submit');
+  btn.style.opacity = '0.7';
+  btn.disabled = true;
+
+  const payload = {
+    신청유형: '자동차보험비교견적',
+    신청일시: new Date().toLocaleString('ko-KR'),
+    성명: name,
+    연락처: tel,
+    생년월일: birth,
+    차량번호: num,
+    차종: type,
+    현재보험사: curr,
+    만기일: expire,
+    신청경로: '김은경 설계사 홈페이지 자동차보험 비교견적',
+    설계사명: '김은경',
+    설계사이메일: '01036029378a@gmail.com'
+  };
+
+  fetch(CAR_APPS_SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(payload)
+  })
+  .then(()=>{
+    btn.style.opacity = '1';
+    btn.disabled = false;
+    document.getElementById('modalIcon').textContent='🚗';
+    document.getElementById('modalTitle').textContent='비교견적 신청 완료!';
+    document.getElementById('modalSub').textContent='전보험사 비교 결과를 빠르게 보내드리겠습니다.\n카카오톡으로도 확인하실 수 있어요.';
+    document.getElementById('modal').classList.add('show');
+    // 폼 초기화
+    document.getElementById('car_num').value='';
+    document.getElementById('car_name').value='';
+    document.getElementById('car_birth').value='';
+    document.getElementById('car_tel').value='';
+    document.getElementById('car_expire').value='';
+    document.getElementById('car_agree').checked=false;
+  })
+  .catch(err=>{
+    btn.style.opacity = '1';
+    btn.disabled = false;
+    console.error(err);
+    alert('전송 중 오류가 발생했습니다. 카카오톡으로 문의해 주세요.');
+  });
+}
+
+// Float bar
+const heroEl = document.querySelector('.hero');
+const floatBar = document.getElementById('floatBar');
+new IntersectionObserver(e=>floatBar.classList.toggle('hidden',e[0].isIntersecting),{threshold:0}).observe(heroEl);
+
+// Fade in
+document.querySelectorAll('.fi-a').forEach(el=>{
+  new IntersectionObserver(e=>{if(e[0].isIntersecting){el.classList.add('vis');}},{threshold:0.07}).observe(el);
+});
+</script>
+</body>
+</html>
